@@ -1,4 +1,6 @@
 const RegisterModel = require("../model/auth");
+require("dotenv").config();
+const jwt = require("jsonwebtoken")
 
 const otpVerification = (req, res)=> {
     const {phone} = req.body;
@@ -18,14 +20,16 @@ const otpVerification = (req, res)=> {
        else
        {
         // randomOtp, phone and options-
+        const {_id} = result;
+        const token = jwt.sign({_id}, process.env.jwt_key, {expiresIn: "300s"})
         const randomOtp = Math.floor(100000 + Math.random() * 900000);
-        const {phone} = result;
-        res.json({message: randomOtp})
+        res.json({OTP: randomOtp, token})
        }
     })
     .catch(error=>{
         console.log(error)
     })
 }
+
 
 module.exports = {otpVerification};

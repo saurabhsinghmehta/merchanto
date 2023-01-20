@@ -1,6 +1,6 @@
 import "../style/signUp.css"
 import {useDispatch, useSelector} from "react-redux";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { signUp } from "../redux/auth/action";
 import {Link, useNavigate} from "react-router-dom"
 import { toast } from 'react-toastify';
@@ -21,12 +21,20 @@ export function SignUp()
         const sendData = {name, email, phone, password};
         dispatch(signUp(sendData))
     }
-    if(userData.signUp.message)
-        {
-            alert(userData.signUp.message)
-            navigate("/signin")
-        }
-    // console.log(userData.signUp);
+
+    // handle response and error
+    useEffect(()=>{
+        if(userData.signUp.error)
+            {
+                return alert(userData.signUp.error)
+            }
+        if(userData.signUp.message)
+            {
+                alert(userData.signUp.message)
+                navigate("/signin-email")
+                return 
+            }
+        }, [userData.signUp])
 
     return (
         <div id="sign-up">

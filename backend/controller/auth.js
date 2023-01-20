@@ -99,28 +99,47 @@ const signUp = (req, res)=>{
 
 // signIn-
 const signIn = (req, res)=>{
-    const {email, password} = req.body
-    RegisterModel.find({email}).then(userData=>{
+    const {email, password} = req.body;
+
+    // Checking, all the details-
+    if(!email || !password)
+    {
+        return res.status(422).json({error: "Please fill all details"});
+    }
+
+    // varification with regex-
+    const emailVarify = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+    if(!(emailVarify))
+    {
+        res.status(422).json({error: "Email is not valid"});
+        console.log("Email is not valid");
+        return;
+    }
+
+    // Check, if user is registered or not-
+    RegisterModel.findOne({email})
+    .then(userData=>{
+        // Check, if email is matched or not-
         if(!userData)
         {
-            res.json({error: "OOP's you are not registered"})
+            res.status(422).json({error: "Email does not exist"});
+            console.log("Email does not exist");
         }
-        else
-        {
-            console.log(userData)
-            bcrypt.compare(password, userData[0].password, (err, matched_password)=>{
-                if(!matched_password)
-                {
-                    res.json({error: err})
-                }
-                else
-                {
-                    const token = jwt.sign(password, "social_media_app");
-                    res.json({"message": "Successfully loged in", token})
-                    console.log("Successfully loged in");
-                }
-            })
-        }
+        // Check if password is matched or not-
+        const token = jwt.sign({_id:userData.id}, process.env.jwt_key, {expiresIn: "300s"})
+        bcrypt.compare(password, userData.password)
+        .then(user=>{
+            user === true ? (res.json({token, message: "Successfully loged in"})) : (res.status(404).json({error: "Password is not matching"}))
+        })
+        .catch(error=>{
+            console.log(`error: ${error}`)
+            res.status(404).json({error: "OOP's data not found"})
+        })
+        
+    })
+    .catch(error=>{
+        res.json({error: "OOP's something went wrong"})
+        console.log(`loginError : ${error}`)
     })
 }
 
