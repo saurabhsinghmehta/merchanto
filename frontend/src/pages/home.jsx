@@ -1,5 +1,6 @@
 import {Input, Box, Button, Heading,Image,Checkbox ,SimpleGrid,Text,Accordion,AccordionItem,AccordionButton,AccordionIcon,AccordionPanel} from '@chakra-ui/react'
 import Navbar from '../components/Navbar'
+import "../styles/Home.css"
 import {Link,useLocation,useSearchParams} from "react-router-dom";
 import { useSelector,useDispatch } from 'react-redux';
 import { getProductData } from '../redux/app/action';
@@ -10,12 +11,12 @@ const Home = () => {
   const [page,setPage]=useState(1)
   const location=useLocation()
   const product=useSelector((state)=>state.product);
-  console.log(product);
+  
   const dispatch=useDispatch();
   const [searchParams,setSearchParams]=useSearchParams();
   const initialSort=searchParams.getAll('sort');
   const [sort,setSortBy]=useState(initialSort[0] || "");
-console.log(location);
+
   const handleSort=(e)=>{
     setSortBy(e.target.value);
   }
@@ -39,7 +40,6 @@ useEffect(()=>{
       }
       
     }
-    console.log(getProductParams)
     dispatch(getProductData(getProductParams))
   }
 },[location.search,setSearchParams,sort,page])
@@ -65,7 +65,13 @@ useEffect(()=>{
 
     </Box>
     {/* --------------------------- */}
-    <Heading mt="50px" color="rgb(51,51,51)" textAlign="center">Top Categories to choose from</Heading>
+    <div class="topCategoriesHeading">
+            <span class="horizontalLine"></span>
+            <h1>Top Categories to choose from</h1>
+            <span class="horizontalLine"></span>
+        </div>
+
+    {/* <Heading mt="50px" color="rgb(51,51,51)" textAlign="center">Top Categories to choose from</Heading> */}
     <Box  m="auto" display='flex' gap="20px" justifyContent='center' alignItems="center">
      <Image borderRadius="5px"  w={["100%","100%","100%"]}  marginTop="5%" src="https://images.meesho.com/images/marketing/1631612018143.png"/>
       <Box mt="15%" color="white" position='absolute'  display="flex">
@@ -788,7 +794,7 @@ useEffect(()=>{
                       <Text ml="5px" fontWeight="700" color="rgb(35,187,117)">{e.discount}% off</Text> 
                       </Box>
                       <Image ml="10px" w="16px" h="16px" display="inline" src={disImg}/>
-                      <Text  style={{display:"inline",fontSize:"14px", color:" color: rgb(102, 102, 102);", marginLeft:"10px"}}>₹ 100 discount on 1st order</Text>
+                      <Text  style={{display:"inline",fontSize:"14px", color:"rgb(102, 102, 102)", marginLeft:"10px"}}>₹ 100 discount on 1st order</Text>
                       <Button  ml="10px" borderRadius="50px" h="22px" w="50%" color="rgb(153, 153, 153)">Free Delivery</Button><br/>
                       <Button  _hover={{bgColor:'rgb(35,187,117)'}} ml="10px" mt="10px" borderRadius="50px" bgColor="rgb(35,187,117)" color="white">3.6⭐</Button>
                       </Box>

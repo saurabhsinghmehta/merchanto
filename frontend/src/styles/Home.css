@@ -1,0 +1,24 @@
+:root{
+    --hoverTextColor:rgb(244, 51, 151);
+    --textColor : rgb(87, 85, 85);
+}
+.topCategoriesHeading{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    
+}
+.horizontalLine{
+    padding: 1px;
+    background-color: var(--hoverTextColor);
+    width:50%;
+}
+.topCategoriesHeading h1{   
+    width: max-content;
+    font-weight: 400;
+    width: 1050px;
+    color:rgb(51,51,51);
+    font-size: 38px;
+    text-align:center;
+    margin: 0;
+}
