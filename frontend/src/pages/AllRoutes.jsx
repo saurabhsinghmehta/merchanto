@@ -1,53 +1,34 @@
-import React from 'react'
-import {Route,Routes} from 'react-router-dom'
-
-import Cart from './Cart';
-import Home from './Home';
-import HomedataSinglePage from './HomedataSinglePage'
-import MenPage from './MenPage';
-import Checkout from './Checkout';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import { Otp } from "./otp";
+import { SignUp } from "./signUp";
+import "react-toastify/dist/ReactToastify.css";
+import Cart from "./Cart";
+import Home from "./home";
+import HomedataSinglePage from "./HomedataSinglePage";
+import MenPage from "./MenPage";
+import Checkout from "./Checkout";
+import { MobileNumber } from "./mobileNumber";
+import AdminDashboard from "../pages/AdminDashboard";
+import {SignInWithEmail} from "../pages/signInWithEmail"
 const AllRoutes = () => {
   return (
     <>
-<Routes>
-    <Route path="/" element={<Home/>}/>
-    <Route path="/product/:id" element={<HomedataSinglePage/>}/>
-    <Route path="/cart" element={<Cart/>}/>
-    <Route path="/mens" element={<MenPage/>}/>
-    <Route path="/checkout" element={<Checkout/>}/>
-</Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/product/:id" element={<HomedataSinglePage />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/mens" element={<MenPage />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signin-email" element={<SignInWithEmail />} />
+        <Route path="/mobilenumber" element={<MobileNumber />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/otp" element={<Otp />} />
+      </Routes>
     </>
-  )
+  );
+};
 
-import Cart from './Cart'
-import Home from './home'
-import HomedataSinglePage from './HomedataSinglePage'
-import MenPage from './MenPage'
-import { MobileNumber } from "./mobileNumber";
-import { Otp } from "./otp";
-import { SignInWithEmail } from "./signInWithEmail";
-import { SignUp } from "./signUp";
-import { ToastContainer} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-export function AllRoutes()
-{
-    return (
-        <>
-            <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/product/:id" element={<HomedataSinglePage/>}/>
-            <Route path="/cart" element={<Cart/>}/>
-            <Route path="/mens" element={<MenPage/>}/>
-            <Route path="/signup" element={<SignUp/>} />
-            <Route path="/signin-email" element={<SignInWithEmail/>} />
-            <Route path="/mobilenumber" element={<MobileNumber/>} />
-            <Route path="/otp" element={<Otp/>} />
-            </Routes>
-            <ToastContainer theme="colored"/>
-        </>
-    )
-
-}
-
-export default AllRoutes
+export default AllRoutes;
