@@ -141,7 +141,7 @@ const signIn = (req, res)=>{
         const token = jwt.sign({_id:userData.id}, process.env.jwt_key, {expiresIn: "300s"})
         bcrypt.compare(password, userData.password)
         .then(user=>{
-            user === true ? (res.json({token, message: "Successfully loged in"})) : (res.status(404).json({error: "Password is not matching"}))
+            user === true ? (res.json({token, user: userData.name, message: "Successfully loged in"})) : (res.status(404).json({error: "Password is not matching"}))
         })
         .catch(error=>{
             console.log(`error: ${error}`)

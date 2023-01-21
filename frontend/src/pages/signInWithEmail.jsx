@@ -42,6 +42,7 @@ export function SignInWithEmail()
         else if(emailResponse.message)
         {
             localStorage.setItem("token", (emailResponse.token));
+            localStorage.setItem("name", (emailResponse.user));
             notifySuccess(emailResponse.message);
             navigate("/");
         }
