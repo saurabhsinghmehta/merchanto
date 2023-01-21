@@ -1,12 +1,35 @@
-import React from 'react'
+import {useState,useEffect} from 'react'
+import {Button,Box,Image} from "@chakra-ui/react"
 import {Link} from "react-router-dom"
+import axios from "axios";
 import '../styles/Navbar.css';
 import {SearchIcon} from '@chakra-ui/icons'
 import {CgProfile} from 'react-icons/cg';
 import {ImMobile} from 'react-icons/im';
 import {BsBagCheck} from 'react-icons/bs';
 import {AiOutlineShoppingCart} from 'react-icons/ai'
+import { useSelector } from 'react-redux';
 function Navbar() {
+  const product=useSelector((store)=>store.product)
+  const [value,setValue]=useState('')
+  const [data,setData]=useState([])
+  const [cartData,setCartData]=useState([]);
+
+  useEffect(()=>{
+    axios.get('http://localhost:3000/cart').then((res)=>setCartData(res.data))
+    axios.get('http://localhost:3000/products').then((res)=>setData(res.data))
+  },[])
+
+  let lengthofcart=cartData.length;
+
+  console.log(lengthofcart);
+
+  const onChange=(e)=>{
+    setValue(e.target.value)
+  }
+  const onSearch=(searchTerm)=>{
+    setValue(searchTerm)
+  }
   return (
     <>
      <div className="main_nav">
@@ -17,7 +40,36 @@ function Navbar() {
             </div>
             <div className="nav_input">
             <SearchIcon className='search_icon'/>
-               <input className="logo_input" placeholder="Try Saree, Kurti or Search by Product Code " type="text"/>
+               <input value={value} onChange={onChange} className="logo_input" placeholder="Try Saree, Kurti or Search by Product Code " type="text"/>
+               <Button display="none" onClick={()=>onSearch(value)}></Button>
+               <Box>
+            {product.filter(item=>{
+              const searchTerm=value.toLowerCase();
+              const fullname=item.title.toLowerCase();
+              return searchTerm && fullname.startsWith(searchTerm) &&
+              fullname!==searchTerm
+            }).slice(0,5)
+            .map((item)=>(
+              (
+               <Link to={`/product/${item.id}`}><Box  
+                onClick={()=>onSearch(item.title)} 
+                bgColor="grey"
+                className='dropdown-row' 
+                cursor='pointer'
+                textAlign='start'
+                margin="2px 0"
+                key={item.price}>
+                  {item.title}
+                 <Box display='flex'
+                 justifyContent="space-between">
+                  <Image bgColor="grey" width="10%" src={item.image}/>
+                 </Box>
+                </Box>
+                </Link> 
+                )
+            ))}
+          </Box>
+    {/*------------------------------------- ----------------------------- */}
             </div>
             </div>
             <div className="nav_menu">
@@ -44,7 +96,7 @@ function Navbar() {
             <p className='orders'><BsBagCheck className='bag'/>My Orders</p>
         </div>
        </div>
-              <div className='dropbtn_cart'><Link to="/cart"><AiOutlineShoppingCart className='cart_icon'/></Link>Cart</div>
+              <div className='dropbtn_cart'><Link to="/cart"><AiOutlineShoppingCart className='cart_icon'/></Link><label >Cart{lengthofcart}</label></div>
             </div>
         </div>
         <div className="main_nav2">
