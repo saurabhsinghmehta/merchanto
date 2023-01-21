@@ -3,8 +3,6 @@ const RegisterModel = require("../model/auth");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
-const {v4 : uuidv4} = require("uuid");
-const RegisterVerifyModel = require("../model/authVerification");
 require("dotenv").config();
 
 
@@ -28,6 +26,7 @@ transporter.verify((error, success)=>{
         console.log("Nodemailer is ready for message");
     }
 })
+
 
 // signUp-
 const signUp = (req, res)=>{
@@ -66,6 +65,7 @@ const signUp = (req, res)=>{
         }
         else
         {
+            // hash password and save it into the database-
             bcrypt.hash(password, 10)
             .then(hashedPassword=>{
                 const userData = RegisterModel({name, email, phone, password: hashedPassword, verified : false});
@@ -73,20 +73,31 @@ const signUp = (req, res)=>{
                 .then(result=>{
                     if(result)
                     {
-                        res.json({message: "Successfully registered"})
+                        // send email-
+                        var mailOptions = {
+                            from: process.env.authMail,
+                            to: email,
+                            subject: 'Merchanto, successfully registeration!',
+                            text: `Hi, ${name},You have successfully registered in merchanto.`
+                          };
+                          
+                          transporter.sendMail(mailOptions, function(error, info){
+                            if(error)
+                            {
+                              console.log(error);
+                            }
+                            else
+                            {
+                              console.log('Email sent: ' + info.response);
+                              return res.json({message: "Successfully registered"})
+                            }
+                          });
                     }
                     else
                     {
                         res.json({error: "OOP's something is wrong"})
                     }
                 })
-                    // .then((result)=>{
-                    //     // account verification-
-                    //     sendVerificationEmail(result, res)
-                    // })
-                    // .catch((error=>{
-                    //     res.json({message: "An error occured while saving the data"})
-                    // }))
             })
         }
     })
@@ -122,9 +133,10 @@ const signIn = (req, res)=>{
         // Check, if email is matched or not-
         if(!userData)
         {
-            res.status(422).json({error: "Email does not exist"});
             console.log("Email does not exist");
+            return res.status(422).json({error: "Email does not exist"});
         }
+        
         // Check if password is matched or not-
         const token = jwt.sign({_id:userData.id}, process.env.jwt_key, {expiresIn: "300s"})
         bcrypt.compare(password, userData.password)

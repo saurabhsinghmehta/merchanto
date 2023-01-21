@@ -8,7 +8,6 @@ const authRouter = express.Router();
 authRouter.post("/signup", signUp);
 authRouter.post("/signin", signIn);
 authRouter.post("/phonenumber", otpVerification);
-// authRouter.get("/verify/:userId/:uniqueString", emailVerification)
 
 // export-
 module.exports = authRouter;

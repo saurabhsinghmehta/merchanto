@@ -4,9 +4,11 @@ const dbConnection = require("./config/database");
 const authRouter = require("./routes/auth");
 const cors = require("cors");
 const appRouter = require("./routes/app");
+const productRouter = require("./routes/product");
 const app = express();
 require("dotenv").config();
 const PORT = 8000
+
 
 // middleware and router-
 app.use(cors())
@@ -14,6 +16,8 @@ app.use(express.urlencoded({extended: false}))
 app.use(express.json());
 app.use("/auth", authRouter);
 app.use("/", appRouter)
+app.use("/admin", productRouter);
+
 
 // port-
 app.listen(PORT, async()=>{
