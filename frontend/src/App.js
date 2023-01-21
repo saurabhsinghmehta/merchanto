@@ -8,17 +8,9 @@ import Footerabout from './Component/footerabout';
 function App() {
   return (
     <div className="App">
-<<<<<<< HEAD
-=======
-
-      Hello Everyone
-     
-
-   
-    <AllRoutes/>
-      <Footer />
+      <AllRoutes/>
       <Footerabout/>
->>>>>>> abbcff72531fc1135fb86774c09a68e3de08fbf2
+      <Footer/>
     </div>
   );
 }

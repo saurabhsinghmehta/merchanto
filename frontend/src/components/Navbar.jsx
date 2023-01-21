@@ -92,7 +92,7 @@ function Navbar() {
         <div className="dropdown-content_profile">
             <p className='hello'>Hello User</p>
             <p className='access'>To access your account</p>
-            <button className='profile_button'>Sign Up</button>
+            <Link to={"/signup"}><button className='profile_button'>Sign Up</button></Link>
             <hr className='hr'/>
             <p className='orders'><BsBagCheck className='bag'/>My Orders</p>
         </div>
