@@ -19,9 +19,9 @@ export const getDataFailure=()=>{
     }
 }
 
-export const getProductData=(dispatch)=>{
+export const getProductData=(params)=>(dispatch)=>{
     dispatch(getDataRequest());
-    axios.get('http://localhost:3000/products',)
+    axios.get('https://super-paint-flamingo.glitch.me/AllProducts',params)
     .then((res)=>{
         console.log("data",res)
         dispatch(getDataSuccess(res.data))
@@ -31,4 +31,15 @@ export const getProductData=(dispatch)=>{
         dispatch(getDataFailure());
     })
 }
-
+export const getMenProductData=(params)=>(dispatch)=>{
+    dispatch(getDataRequest());
+    axios.get('http://localhost:3000/products',params)
+    .then((res)=>{
+        console.log("data",res)
+        dispatch(getDataSuccess(res.data))
+    })
+    .catch((error)=>{
+        console.log(error);
+        dispatch(getDataFailure());
+    })
+}
