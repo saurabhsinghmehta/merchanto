@@ -59,6 +59,22 @@ input::placeholder{
     font-size: 18px;
 }
 
+/* mobile-number-input */
+#mobile-number-input{
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+/* OTP */
+#otp-input{
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 3px;
+    width: 90px;
+}
+
+
 @media screen and (max-width: 520px) {
     #mobile-number{
         width: 95%;

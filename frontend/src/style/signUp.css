@@ -44,20 +44,21 @@ input::placeholder{
     transition: 0.2s linear;
     border: none;
 }
+#sign-up-btn:hover{
+    background-color: #f0027d;
+}
 #already-account{
     margin-top: 2rem;
 }
-#already-account>a{
-    color: #f0268e;
-    letter-spacing: 0.9px;
+#sign-in-options{
+    color: #F43397;
     transition: 0.2s linear;
 }
-#already-account>:hover{
+#sign-in-options:hover{
     font-size: 18px;
+    color: #f0027d;
 }
-#sign-up-btn:hover{
-    background-color: #f0268e;
-}
+
 
 @media screen and (max-width: 520px) {
     #sign-up{
