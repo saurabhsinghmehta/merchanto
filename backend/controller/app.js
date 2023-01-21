@@ -1,25 +1,28 @@
 require("dotenv").config();
-const fs = require("fs");
+
 const AppModel = require("../model/app_model");
 const home = async (req, res) => {
-  // const {image,title,mrp,price,rating,category,discount}=req.body
-// const genre=req.query
 try{
-const home_prod= await AppModel.find()
-res.send(home_prod)
+const page=parseInt(req.query.page)-1 || 0;
+const limit=parseInt(req.query.limit)|| 0;
+const search=req.query.search || "";
+let sort= req.query.sort|| "price";
+req.query.sort?(sort=req.query.sort.split(",")):(sort=[sort])
+let sortBy={}
+if(sort[1]){
+  sortBy[sort[0]]=sort[1]
+}else{
+  sortBy[sort[0]]="asc"
+}
+const home_prod = await AppModel.find({$regex:search,$options:"i"}).sort(sortBy).skip(page*limit).limit(limit)
+
+res.status(200).json(home_prod)
 }catch(error){
     console.log(`error : ${error}`);
-      console.log({ error: "OOP's something went wrong" });
-res.send("errr");
+      res.status(500).json({error:true,message:"Internal Server Error"})
 }
 }
 
 
 module.exports = { home };
-  // image: String,
-  // title: String,
-  // mrp: Number,
-  // price: Number,
-  // rating: Number,
-  // category:String,
-  // discount:Number
+
