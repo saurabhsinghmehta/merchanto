@@ -3477,14 +3477,5 @@
       "title": "Comfy Glamorous Men Shirts"
     }
   ],
-  "cart": [
-    {
-      "id": 6,
-      "image": "https://www.jiomart.com/images/product/150x150/491173885/elina-long-grain-rice-1-kg-product-images-o491173885-p491173885-0-202203151443.jpg",
-      "title": "Elina Long Grain Rice 1 kg",
-      "mrp": 160,
-      "price": 50,
-      "discount": 68
-    }
-  ]
+  "cart": []
 }

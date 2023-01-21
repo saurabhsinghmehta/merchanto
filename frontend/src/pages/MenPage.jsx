@@ -9,7 +9,7 @@ import { useState } from 'react';
 const disImg="https://i.postimg.cc/Kzk9hV5x/discount-3.png";
 const MenPage = () => {
   const location=useLocation()
-  const product=useSelector((state)=>state.product);
+  const product=useSelector((state)=>state.app.product);
   console.log(product);
   const dispatch=useDispatch();
   const [page,setPage]=useState(1)
