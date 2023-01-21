@@ -9,7 +9,7 @@ import { addCartData, getProductData } from '../redux/app/action';
 const disImg="https://i.postimg.cc/Kzk9hV5x/discount-3.png";
 const HomedataSinglePage = () => {
     const{id}=useParams();
-    const products=useSelector((store)=>store.product);
+    const products=useSelector((store)=>store.app.product);
     const [currentProduct,setCurrentProduct]=useState({})
     const dispatch=useDispatch();
     const navigate=useNavigate()

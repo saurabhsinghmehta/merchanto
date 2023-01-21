@@ -10,7 +10,7 @@ const disImg="https://i.postimg.cc/Kzk9hV5x/discount-3.png";
 const Home = () => {
   const [page,setPage]=useState(1)
   const location=useLocation()
-  const product=useSelector((state)=>state.product);
+  const product=useSelector((state)=>state.app.product);
   
   const dispatch=useDispatch();
   const [searchParams,setSearchParams]=useSearchParams();

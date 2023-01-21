@@ -1,0 +1,66 @@
+/* #F43397 */
+body{
+    background-color: #f433971a;
+}
+#sign-in{
+    border: 1px solid white;
+    margin: auto;
+    margin-top: 2rem;
+    padding: 1rem 0;
+    width: 500px;
+    background-color: white;
+    border-radius: 10px;
+}
+#heading{
+    font-size: 24px;
+    margin-bottom: 2rem;
+    color: #F43397;
+}
+input{
+    display: block;
+    width: 90%;
+    margin: 1rem auto;
+    padding: 1rem 0.2rem;
+    border: none;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.502);
+    font-size: 16px;
+}
+input:focus{
+    transition: .1s;
+    outline: none;
+    border-bottom: 1px solid #F43397;
+}
+input::placeholder{
+    font-size: 16px;
+}
+#sign-in-btn{
+    margin-top: 2.5rem;
+    padding: 0.8rem 0.2rem;
+    background-color: #F43397;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s linear;
+    border: none;
+}
+#sign-in-btn:hover{
+    background-color: #f0027d;
+}
+#or{
+    margin-top: 1.5rem;
+}
+#or+a{
+    color: #f0027d;
+    transition: 0.2s linear;
+}
+#or+a:hover{
+    font-size: 18px;
+}
+
+@media screen and (max-width: 520px) {
+    #sign-in{
+        width: 95%;
+    }
+}
