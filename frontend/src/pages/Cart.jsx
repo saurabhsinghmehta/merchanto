@@ -19,7 +19,7 @@ import { AlertDialog,
 import { useRef } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import {deleteCartData, getCartData, getMenProductData} from '../redux/app/action';
-import Navbar from '../components/Navbar'
+import Navbar from '../Components/Navbar'
 import { useEffect } from "react";
 
 const Cart = () => {
