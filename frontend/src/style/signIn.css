@@ -1,22 +1,19 @@
-/* #F43397 */
-body{
-    background-color: #f433971a;
-}
-#sign-in{
+#sign-in-r{
     border: 1px solid white;
     margin: auto;
     margin-top: 2rem;
-    padding: 1rem 0;
+    padding: 2rem 0;
     width: 500px;
     background-color: white;
     border-radius: 10px;
+    background-color: #f433971a;
 }
 #heading{
     font-size: 24px;
     margin-bottom: 2rem;
     color: #F43397;
 }
-input{
+#sign-in-r>input{
     display: block;
     width: 90%;
     margin: 1rem auto;
@@ -25,15 +22,15 @@ input{
     border-bottom: 1px solid rgba(128, 128, 128, 0.502);
     font-size: 16px;
 }
-input:focus{
+#sign-in-r>input:focus{
     transition: .1s;
     outline: none;
     border-bottom: 1px solid #F43397;
 }
-input::placeholder{
+#sign-in-r>input::placeholder{
     font-size: 16px;
 }
-#sign-in-btn{
+#sign-in-r-btn{
     margin-top: 2.5rem;
     padding: 0.8rem 0.2rem;
     background-color: #F43397;
@@ -45,8 +42,11 @@ input::placeholder{
     transition: 0.3s linear;
     border: none;
 }
-#sign-in-btn:hover{
+#sign-in-r-btn:hover{
     background-color: #f0027d;
+}
+#sign-in-r-bottom{
+    text-align: center;
 }
 #or{
     margin-top: 1.5rem;
@@ -60,7 +60,7 @@ input::placeholder{
 }
 
 @media screen and (max-width: 520px) {
-    #sign-in{
+    #sign-in-r{
         width: 95%;
     }
 }

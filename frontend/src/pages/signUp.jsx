@@ -5,6 +5,7 @@ import { signUp } from "../redux/auth/action";
 import {Link, useNavigate} from "react-router-dom"
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Navbar from "../components/Navbar";
 
 
 export function SignUp()
@@ -52,17 +53,22 @@ export function SignUp()
 
     // return statement-
     return (
-        <div id="sign-up">
-            <p id="heading">Sign Up</p>
-            <input type="text" placeholder="Name" onChange={(e)=>setName(e.target.value)} />
-            <input type="email" placeholder="Email Address" onChange={(e)=>setEmail(e.target.value)} />
-            <input type="tel" maxLength={10} placeholder="Phone Number" onChange={(e)=>setPhone(e.target.value)} />
-            <input type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)} />
-            <input type="submit" value={isLoading === true ? "...wait" : "Sign up"} id="sign-up-btn" onClick={signUpHandler} />
-            <p id="already-account">Have an account already</p>
-            <Link id="sign-in-options" to={"/signin-email"}>Sign In with email </Link>
-            <p>or</p>
-            <Link id="sign-in-options" to={"/mobilenumber"}>Sign In with mobile number </Link>
-        </div>
+        <>
+            <Navbar/>
+            <div id="sign-up-r">
+                <p id="heading-r">Sign Up</p>
+                <input type="text" placeholder="Name" onChange={(e)=>setName(e.target.value)} />
+                <input type="email" placeholder="Email Address" onChange={(e)=>setEmail(e.target.value)} />
+                <input type="tel" maxLength={10} placeholder="Phone Number" onChange={(e)=>setPhone(e.target.value)} />
+                <input type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)} />
+                <input type="submit" value={isLoading === true ? "...wait" : "Sign up"} id="sign-up-r-btn" onClick={signUpHandler} />
+                <div id="sign-up-r-bottom">
+                    <p id="already-account">Have an account already</p>
+                    <Link id="sign-in-options" to={"/signin-email"}>Sign In with email </Link>
+                    <p>or</p>
+                    <Link id="sign-in-options" to={"/mobilenumber"}>Sign In with mobile number </Link>
+                </div>
+            </div>
+        </>
     );
 }

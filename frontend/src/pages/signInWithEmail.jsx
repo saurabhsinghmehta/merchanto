@@ -51,13 +51,15 @@ export function SignInWithEmail()
     // return statement-
     return (
         <>
-            <div id="sign-in">
-                <p id="heading">Sign In to view your profile</p>
+            <div id="sign-in-r">
+                <p id="heading-r">Sign In to view your profile</p>
                 <input type="email" placeholder="Email Address" value={email} onChange={(e)=>setEmail(e.target.value)} />
                 <input type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)} />
-                <input type="submit" value={isLoading === true ? "...wait" : "Sign in"} id="sign-in-btn" onClick={emailSignInHandler} />
-                <p id="or">or</p>
-                <Link to={"/mobilenumber"}>Sign In with mobile number </Link>
+                <input type="submit" value={isLoading === true ? "...wait" : "Sign in"} id="sign-in-r-btn" onClick={emailSignInHandler} />
+                <div id="sign-in-r-bottom">
+                    <p id="or">or</p>
+                    <Link to={"/mobilenumber"}>Sign In with mobile number </Link>
+                </div>
             </div>
         </>
     );
