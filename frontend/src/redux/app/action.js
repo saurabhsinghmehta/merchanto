@@ -72,7 +72,7 @@ export const deleteCartDataError=()=>{
 
 export const getCartData=()=>(dispatch)=>{
     dispatch(getCartDataRequest());
-    return axios.get('http://localhost:3000/cart')
+    return axios.get('http://localhost:8080/cart')
     .then((res)=>dispatch(getCartDataSuccess(res.data)))
     .catch((error)=>{
         dispatch(getCartDataError(error))
@@ -82,7 +82,7 @@ export const getCartData=()=>(dispatch)=>{
 export const addCartData=(payload)=>(dispatch)=>{
     dispatch(addCartDataRequest())
     return axios
-    .post('http://localhost:3000/cart',payload)
+    .post('http://localhost:8080/cart',payload)
     .then((res)=>{
         dispatch(addCartDataSuccess(res.data))
     })
@@ -93,7 +93,7 @@ export const addCartData=(payload)=>(dispatch)=>{
 export const deleteCartData=(id)=>(dispatch)=>{
     dispatch(deleteCartDataRequest());
     axios
-    .delete(`http://localhost:3000/cart/${id}`)
+    .delete(`http://localhost:8080/cart/${id}`)
     .then((res)=>{
      dispatch(deleteCartDataSuccess())
     })
@@ -118,7 +118,7 @@ export const getProductData=(params)=>(dispatch)=>{
 }
 export const getMenProductData=(params)=>(dispatch)=>{
     dispatch(getDataRequest());
-    axios.get('http://localhost:3000/products',params)
+    axios.get('http://localhost:8080/menproduct',params)
     .then((res)=>{
         console.log("data",res)
         dispatch(getDataSuccess(res.data))
