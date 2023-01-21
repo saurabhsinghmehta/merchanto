@@ -1,18 +1,21 @@
 import './App.css';
-import Shoes from './pages/men';
+
 
 import AllRoutes from './pages/AllRoutes';
+import Footer from './Component/footer';
+import Footerabout from './Component/footerabout';
 
 function App() {
   return (
     <div className="App">
 
       Hello Everyone
-      <Shoes/>
+     
 
    
     <AllRoutes/>
-
+      <Footer />
+      <Footerabout/>
     </div>
   );
 }

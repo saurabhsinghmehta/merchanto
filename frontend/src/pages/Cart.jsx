@@ -23,7 +23,7 @@ import Navbar from '../components/Navbar'
 import { useEffect } from "react";
 
 const Cart = () => {
-  const product=useSelector((store)=>store.cart);
+  const product=useSelector((store)=>store.app.cart);
   console.log("cart product",product);
   const dispatch=useDispatch();
   const {isOpen,onClose}=useDisclosure();

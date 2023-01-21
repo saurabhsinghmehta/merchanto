@@ -10,14 +10,15 @@ import {BsBagCheck} from 'react-icons/bs';
 import {AiOutlineShoppingCart} from 'react-icons/ai'
 import { useSelector } from 'react-redux';
 function Navbar() {
-  const product=useSelector((store)=>store.product)
+  const product = useSelector((store) => store.app.product)
+  console.log(product,"store")
   const [value,setValue]=useState('')
   const [data,setData]=useState([])
   const [cartData,setCartData]=useState([]);
 
   useEffect(()=>{
-    axios.get('http://localhost:3000/cart').then((res)=>setCartData(res.data))
-    axios.get('http://localhost:3000/products').then((res)=>setData(res.data))
+    axios.get('http://localhost:8080/cart').then((res)=>setCartData(res.data))
+    axios.get('http://localhost:8080/menproduct').then((res)=>setData(res.data))
   },[])
 
   let lengthofcart=cartData.length;
