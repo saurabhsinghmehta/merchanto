@@ -1,6 +1,6 @@
 require("dotenv").config();
 const MensModel = require("../model/mens_model");
-
+//
 const single_men = async (req, res) => {
     const id=req.params.id
   try {
