@@ -6,7 +6,8 @@ const appRouter = require("./routes/app");
 const mensRouter=require("./routes/mens_route")
 const single_mensRouter=require("./routes/single_mens_route")
 const women_route = require("./routes/women_route");
-const single_women_router=require("./routes/single_women route")
+const single_women_router=require("./routes/single_women route");
+const authRouter = require("./routes/auth");
 const app = express();
 require("dotenv").config();
 const PORT = 8000;
@@ -15,6 +16,7 @@ const PORT = 8000;
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use("/auth", authRouter)
 app.use("/", appRouter);
 app.use("/", mensRouter);
 app.use("/men", single_mensRouter);
