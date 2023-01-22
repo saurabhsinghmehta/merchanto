@@ -76,7 +76,7 @@ const Cart = () => {
             <Tr key={cartItem.id}>
                <Image borderRadius='10px' bgColor="white" w="50%" h="50%" src={cartItem.image} />
               <Td fontSize={{base:"xs",md:"md"}}>{cartItem.title}</Td>
-              <Td fontSize={{base:"xs",md:"md"}}>{cartItem.price}</Td>
+              <Td fontSize={{base:"xs",md:"md"}}>{cartItem.price?cartItem.price:cartItem.discounted_price}</Td>
               <Td fontSize={{base:"xs",md:"md"}}>
                 <Button onClick={()=>handleDelete(cartItem.id)}>Remove From Cart</Button>
                <Link to="/checkout"><Button onClick={()=>handleCheckout(cartItem)} ml="10px">Buy Now</Button></Link> 

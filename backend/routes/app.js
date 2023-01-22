@@ -3,7 +3,9 @@ const express = require("express");
 const { home } = require("../controller/app");
 const appRouter = express.Router();
 
-appRouter.get("/", home)
+
+appRouter.get("/data", home);
 
 // export-
 module.exports = appRouter;
+

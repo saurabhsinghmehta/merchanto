@@ -1,4 +1,4 @@
-import {Input, Box, Button, Heading,Image,Checkbox ,SimpleGrid,Text,Accordion,AccordionItem,AccordionButton,AccordionIcon,AccordionPanel} from '@chakra-ui/react'
+import { Box, Button, Heading,Image,Checkbox ,SimpleGrid,Text,Accordion,AccordionItem,AccordionButton,AccordionIcon,AccordionPanel} from '@chakra-ui/react'
 import Navbar from '../components/Navbar'
 import "../styles/Home.css"
 import {Link,useLocation,useSearchParams} from "react-router-dom";
