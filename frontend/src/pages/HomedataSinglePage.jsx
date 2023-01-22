@@ -6,6 +6,8 @@ import {useEffect,useState} from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { addCartData, getProductData } from '../redux/app/action';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const disImg="https://i.postimg.cc/Kzk9hV5x/discount-3.png";
 const HomedataSinglePage = () => {
     const{id}=useParams();
@@ -26,9 +28,13 @@ const HomedataSinglePage = () => {
         product&&setCurrentProduct(product)
     }
    })
+   const notifySuccess = (res)=>{toast.success(res)};
+    
+
    const handleCart=(payload)=>{
     dispatch(addCartData(payload))
-    alert("Item added in Cart")
+    notifySuccess("Item added in Cart")
+    // alert("Item added in Cart")
     console.log(payload);
    }
   

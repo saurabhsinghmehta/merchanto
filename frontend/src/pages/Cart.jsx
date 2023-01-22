@@ -18,9 +18,12 @@ import { AlertDialog,
               } from "@chakra-ui/react";
 import { useRef } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import {deleteCartData, getCartData, getMenProductData} from '../redux/app/action';
+import {addCheckoutData, deleteCartData, getCartData, getMenProductData} from '../redux/app/action';
 import Navbar from '../components/Navbar'
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Cart = () => {
   const product=useSelector((store)=>store.app.cart);
@@ -29,14 +32,20 @@ const Cart = () => {
   const {isOpen,onClose}=useDisclosure();
   const cancelRef=useRef();
 
+  const handleCheckout=(payload)=>{
+    dispatch(addCheckoutData(payload))
+    console.log(payload);
+   }
+
   useEffect(()=>{
     dispatch(getCartData());
   },[product.length,dispatch])
   console.log(product);
-
+  const notifySuccess = (res)=>{toast.success(res)};
   const handleDelete=(id)=>{
    dispatch(deleteCartData(id))
    dispatch(getCartData())
+   notifySuccess("Item deleted from Cart")
    console.log("item deleted",id);
   }
   
@@ -70,7 +79,7 @@ const Cart = () => {
               <Td fontSize={{base:"xs",md:"md"}}>{cartItem.price}</Td>
               <Td fontSize={{base:"xs",md:"md"}}>
                 <Button onClick={()=>handleDelete(cartItem.id)}>Remove From Cart</Button>
-                <Button ml="10px">Buy Now</Button>
+               <Link to="/checkout"><Button onClick={()=>handleCheckout(cartItem)} ml="10px">Buy Now</Button></Link> 
               </Td>
             </Tr>
           ))} 
@@ -86,9 +95,9 @@ const Cart = () => {
          </Table>
       </TableContainer>
       <Center mt={{base:4,md:8}}>
-        <Button variant="outline" colorScheme="gray" onClick={isOpen}>
+      <Link to="/checkout">  <Button variant="outline" colorScheme="gray" onClick={isOpen}>
           Place Order
-        </Button>
+        </Button></Link>
           <AlertDialog
           isOpen={isOpen}
           leastDestructiveRef={cancelRef}
@@ -97,7 +106,7 @@ const Cart = () => {
             <AlertDialogOverlay>
               <AlertDialogContent>
                 <AlertDialogHeader fontSize="lg" fontWeight="bold">
-                  Place Order
+                Place Order
                 </AlertDialogHeader>
                 <AlertDialogBody>
                   Are you sure you want to place this order ?

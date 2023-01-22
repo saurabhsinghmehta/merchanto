@@ -57,7 +57,7 @@ useEffect(()=>{
             <Box ml={["20px","20px","20px"]} mt={["20px","20px","30px"]} borderRadius="4px" fontSize={["20px","20px","25px"]} width="90%" bgColor=" white" display="flex">
             Free Delievery | Cash On Delievery | Easy Returns
             </Box>
-            <Button  _hover={{bgColor:'rgb(244,51,151)'}} w={["60%","80%","88%","50%"]} ml={["20px","20px","20px"]}  mt={["10px","10px","40px"]} color="white" fontSize={["13px","11px","20px"]} bgColor="rgb(244,51,151) " >Download The Meesho App</Button> 
+            <Button  _hover={{bgColor:'rgb(244,51,151)'}} w={["67%","87%","88%","56%"]} ml={["20px","20px","20px"]}  mt={["10px","10px","40px"]} color="white" fontSize={["13px","11px","20px"]} bgColor="rgb(244,51,151) " >Download The Marchanto App</Button> 
           </Box>
         <Box mt={["20px","0px","0px"]}  w={["100%","50%","50%"]} border="px solid red">
             <Image border="px solid red" w={["100%","100%","100%","100%"]} src="https://images.meesho.com/images/marketing/1631722939962.webp"/>
@@ -126,7 +126,7 @@ useEffect(()=>{
       <Box  display='flex' justifyContent='left' alignItems="center" mt="23px">
      <Image borderRadius="5px" mb={["","","","22px"]} w="100%" src="https://images.meesho.com/images/pow/supplyBannerDesktop.webp"/>
       <Box ml="5%" mb="0%" color="white" position='absolute'>
-        <Heading textAlign="left" color="white" fontSize={['15px','19px',"25px",'35px']}>Register as a Meesho Supplier</Heading>
+        <Heading textAlign="left" color="white" fontSize={['15px','19px',"25px",'35px']}>Register as a Marchanto Supplier</Heading>
         <Text  lineHeight={["10px","20px","20px",'50px']} textAlign="left" color="white" fontSize={["10px","20px","20px",'18px']}>Sell your products to crores of customers at 0% commission</Text>
       <Box display={["none","none","none","flex"]}  mt={["","1%","","5%"]} >
       <Box border="px solid red">
@@ -142,7 +142,8 @@ useEffect(()=>{
       <span>See All Over India</span>
       </Box>
       </Box>
-      <Button  h={["27px","20px","20px","30px"]} w={["40%","24%","20%","25%"]} mt={["","","","2%"]} color="rgb(244,51,151)">Sign up now</Button>
+     <Link to="/signup"><Button  h={["27px","20px","20px","30px"]} w={["40%","24%","20%","25%"]} mt={["","","","2%"]} color="rgb(244,51,151)">Sign up now</Button>
+     </Link>
       </Box>
      
       </Box>

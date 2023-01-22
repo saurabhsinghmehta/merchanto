@@ -19,6 +19,14 @@
     width:100%;
     
 }
+#logo_navbar_div{
+  width:"50%"
+}
+#logo_navbar{
+width: 100%;
+/* margin-top: 15px; */
+}
+
 .main_nav1{
     border:0px solid blue;
     width:100%;
@@ -277,7 +285,13 @@ li:hover {
       .nav_input{
         display: none;
     }
-   
+    #logo_navbar_div{
+      width:50%;
+    }
+    #logo_navbar{
+    width: 100%;
+    margin-top: 15px;
+    }
     .profile_icon{
         display: block;
         margin: auto;
@@ -334,6 +348,14 @@ li:hover {
        }
        .nav_menu{
         width:50%;
+    }
+    #logo_navbar_div{
+      width:"0%";
+    
+    }
+    #logo_navbar{
+    width:100%;
+    margin-top: 8px;
     }
       
       .nav_input{
