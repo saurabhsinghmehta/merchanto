@@ -3,6 +3,8 @@ import* as types from './actionType'
 const initialState = {
   product: [],
   cart:[],
+  checkout:[],
+  payment:[],
   isLoading: false,
   isError: false,
 };
@@ -38,7 +40,38 @@ const reducer = (state = initialState,{type,payload}) => {
          case types.DELETE_CART_DATA_ERROR:
                 return {...state,isLoading:false,isError:true}
   
+
+                case types.ADD_CHECKOUT_DATA_REQUEST:
+                  return {...state,isLoading:true}
+            case types.ADD_CHECKOUT_DATA_SUCCESS:
+                  return {...state,isLoading:false,checkout:[...state.checkout,payload]}
+            case types.ADD_CHECKOUT_DATA_ERROR:
+                  return {...state,isLoading:false,isError:true}
+        
+        
+                 case types.GET_CHECKOUT_DATA_REQUEST:
+                      return {...state,isLoading:true}
+                 case types.GET_CHECKOUT_DATA_SUCCESS:
+                      return {...state,isLoading:false,checkout:payload}
+                 case types.GET_CHECKOUT_DATA_ERROR:
+                      return {...state,isLoading:false,isError:true}
+        
   
+                      case types.ADD_PAYMENT_DATA_REQUEST:
+                        return {...state,isLoading:true}
+                  case types.ADD_PAYMENT_DATA_SUCCESS:
+                        return {...state,isLoading:false,checkout:[...state.payment,payload]}
+                  case types.ADD_PAYMENT_DATA_ERROR:
+                        return {...state,isLoading:false,isError:true}
+              
+              
+                       case types.GET_PAYMENT_DATA_REQUEST:
+                            return {...state,isLoading:true}
+                       case types.GET_PAYMENT_DATA_SUCCESS:
+                            return {...state,isLoading:false,payment:payload}
+                       case types.GET_PAYMENT_DATA_ERROR:
+                            return {...state,isLoading:false,isError:true}
+              
         default:
       return state;
     }

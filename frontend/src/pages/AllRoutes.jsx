@@ -1,9 +1,12 @@
+
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Otp } from "./otp";
+import Payment from './Payment'
 import { SignUp } from "./signUp";
 import "react-toastify/dist/ReactToastify.css";
 import Cart from "./Cart";
+import Final from "./final"
 import Home from "./home";
 import HomedataSinglePage from "./HomedataSinglePage";
 import MenPage from "./MenPage";
@@ -22,10 +25,12 @@ const AllRoutes = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/mens" element={<MenPage />} />
         <Route path="/women" element={<Women />} />
+         <Route path="/payment" element={<Payment/>}/>
         <Route path="/women/:id" element={<SinglePage />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/signup" element={<SignUp />} />
+         <Route path="/final" element={<Final/>}/>
         <Route path="/signin-email" element={<SignInWithEmail />} />
         <Route path="/mobilenumber" element={<MobileNumber />} />
         <Route path="/admin" element={<AdminDashboard />} />
@@ -34,5 +39,6 @@ const AllRoutes = () => {
     </>
   );
 };
+
 
 export default AllRoutes;
