@@ -1,0 +1,138 @@
+[
+ 
+  {
+   
+    "category": "Beauty and health",
+    "title": "DENVER Hamilton Gift",
+    "original_price": 399,
+    "discounted_price": 299,
+  
+    "images": 
+      "https://images.meesho.com/images/products/66514307/gr5gv_512.jpg"
+  ,
+    "rating": 4,
+    "seller_id": 12
+  },
+  {
+ 
+    "category": "Beauty and health",
+    "title": "Wow Vitamin ",
+    "original_price": 493,
+    "discounted_price": 393,
+    "sizes": "Free Size",
+    "images": 
+      "https://images.meesho.com/images/products/71051073/c8nwu_512.jpg"
+  ,
+    "rating": 4,
+    "seller_id": 12
+  },
+  {
+ 
+    "category": "Beauty and health",
+    "title": "Original Swiss",
+    "original_price": 183,
+    "discounted_price": 129,
+   
+    "images": 
+      "https://images.meesho.com/images/products/71030282/vbba3_512.jpg"
+    ,
+    "rating": 3.3,
+    "seller_id": 12
+  },
+ 
+  {
+
+    "category": "Bags and Footwear",
+    "title": "Aadab Fabulonal_price",
+    "original_price": 750,
+    "discounted_price": 650,
+
+    "images": 
+      "https://images.meesho.com/images/products/71046310/kycun_512.jpg",
+ 
+    "rating": 99,
+    "seller_id": 12
+  },
+
+  {
+ 
+    "category": "Bags and Footwear",
+    "title": "Large 35 L Backpack",
+    "original_price": 424,
+   
+    "images": 
+      "https://images.meesho.com/images/products/70992655/00aan_512.jpg"
+  ,
+    "rating": 4.2,
+    "seller_id": 12
+  },
+  {
+  
+    "category": "Bags and Footwear",
+    "title": "BIRJIS STYLISH LIGHTWBAG 25 LTRS",
+    "original_price": 399,
+    "discounted_price": 299,
+  
+    "images": 
+      "https://images.meesho.com/images/products/71008719/fbhox_512.jpg",
+   
+    "rating": 5,
+    "seller_id": 12
+  },
+ 
+  {
+  
+    "category": "Home and Kitchen",
+    "title": "Elite Power 100",
+    "original_price": 1199,
+    "discounted_price": 999,
+ 
+    "images": 
+      "https://images.meesho.com/images/products/43456458/4l28f_512.jpg"
+,
+    "rating": 3.5,
+    "seller_id": 12
+  },
+  {
+
+    "category": "Home and Kitchen",
+    "title": "Cello Mark Stai",
+    "original_price": 1220,
+    "discounted_price": 1000,
+
+    "images": 
+      "https://images.meesho.com/images/products/71022084/iesy9_512.jpg"
+
+ ,
+    "rating": 5,
+    "seller_id": 12
+  },
+  {
+
+    "category": "Home and Kitchen",
+    "title": "Jar & Contai",
+    "original_price": 1199,
+    "discounted_price": 899,
+
+    "images": 
+      "https://images.meesho.com/images/products/71043971/js0s9_512.jpg"
+  ,
+    "rating": 3,
+    "seller_id": 12
+  },
+  {
+
+    "category": "Dresses",
+    "title": "Dress",
+    "original_price": 294,
+    "discounted_price": 174,
+    
+    "images": 
+      "https://images.meesho.com/images/products/71036137/b4aq1_512.jpg",
+    
+ 
+    "rating": 1.6,
+    "seller_id": 9
+  }
+  
+   ]

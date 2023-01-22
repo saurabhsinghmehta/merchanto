@@ -3,11 +3,16 @@ require("dotenv").config();
 const MensModel = require("../model/mens_model");
 const mens = async (req, res) => {
   try {
-   
+  
     const page = parseInt(req.query.page) - 1 || 0;
     const limit = parseInt(req.query.limit) || 0;
-    const search = req.query.search || "";
+
+    const search=req.query.search ||"";
     let sort = req.query.sort || "price";
+
+let category = req.query.category || "All";
+const categories = ["Handrares", "Astonishing", "BreadWhite", "Emulsion"];
+    category==="All" ?(category=[...categories]) :(category=req.query.category.split(","))
     req.query.sort ? (sort = req.query.sort.split(",")) : (sort = [sort]);
     let sortBy = {};
     if (sort[1]) {
@@ -15,7 +20,11 @@ const mens = async (req, res) => {
     } else {
       sortBy[sort[0]] = "asc";
     }
-    const mensProd = await MensModel.find({ $regex: search, $options: "i" })
+
+
+    const mensProd = await MensModel.find({ title:{$regex:search,$options:"i"}})
+    .where("category")
+    .in([...category])
       .sort(sortBy)
       .skip(page * limit)
       .limit(limit);
