@@ -9,7 +9,7 @@ const women_route = require("./routes/women_route");
 const single_women_router=require("./routes/single_women route")
 const app = express();
 require("dotenv").config();
-const PORT = 8000;
+const PORT = 8080;
 
 // middleware and router-
 app.use(cors());
