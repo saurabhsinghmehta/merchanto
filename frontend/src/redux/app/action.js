@@ -138,7 +138,7 @@ export const deleteCartDataError=()=>{
 
 export const getCartData=()=>(dispatch)=>{
     dispatch(getCartDataRequest());
-    return axios.get('https://meesho-clone-tau.vercel.app//cart')
+    return axios.get('https://meesho-clone-tau.vercel.app/cart')
     .then((res)=>dispatch(getCartDataSuccess(res.data)))
     .catch((error)=>{
         dispatch(getCartDataError(error))

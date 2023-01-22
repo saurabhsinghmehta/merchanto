@@ -19,7 +19,7 @@ const getmenfail = () => {
 
 const getmen = (params) => (dispatch) => {
     dispatch(getmenrequest())
-    return axios.get("http://localhost:8080/products",params).then((r) => {
+    return axios.get("https://meesho-clone-tau.vercel.app/products",params).then((r) => {
         dispatch(getmensuccess(r.data))
     }).catch((e) => {
         dispatch(getmenfail())
