@@ -1,5 +1,5 @@
 import {Input, Box, Button, Heading,Image,Checkbox ,SimpleGrid,Text,Accordion,AccordionItem,AccordionButton,AccordionIcon,AccordionPanel} from '@chakra-ui/react'
-import Navbar from '../Components/Navbar'
+import Navbar from '../components/Navbar'
 import {Link,useLocation,useSearchParams} from "react-router-dom";
 import { useSelector,useDispatch } from 'react-redux';
 import { getMenProductData } from '../redux/app/action';

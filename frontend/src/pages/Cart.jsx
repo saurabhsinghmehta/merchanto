@@ -19,7 +19,7 @@ import { AlertDialog,
 import { useRef } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import {deleteCartData, getCartData, getMenProductData} from '../redux/app/action';
-import Navbar from '../Components/Navbar'
+import Navbar from '../components/Navbar'
 import { useEffect } from "react";
 
 const Cart = () => {
@@ -67,7 +67,7 @@ const Cart = () => {
             <Tr key={cartItem.id}>
                <Image borderRadius='10px' bgColor="white" w="50%" h="50%" src={cartItem.image} />
               <Td fontSize={{base:"xs",md:"md"}}>{cartItem.title}</Td>
-              <Td fontSize={{base:"xs",md:"md"}}>{cartItem.price}</Td>
+              <Td fontSize={{base:"xs",md:"md"}}>{cartItem.price?cartItem.price:cartItem.discounted_price}</Td>
               <Td fontSize={{base:"xs",md:"md"}}>
                 <Button onClick={()=>handleDelete(cartItem.id)}>Remove From Cart</Button>
                 <Button ml="10px">Buy Now</Button>

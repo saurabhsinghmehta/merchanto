@@ -10,7 +10,7 @@ const MenCard = ({ menId , menimg, menname ,menrating,mendprice } ) => {
       <div>
      
         <div className="menimg">
-        <Link to={`/men/${menId}`}>
+        <Link to={`/women/${menId}`}>
             <img className="menimgsrc" src={menimg} alt="" />
             </Link>
           </div>
