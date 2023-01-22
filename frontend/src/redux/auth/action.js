@@ -20,6 +20,7 @@ export const signInWithEmail = (sendData) => (dispatch) => {
     dispatch({type: types.REQUEST_SIGN_IN_WITH_EMAIL})
     return axios.post("http://localhost:8000/auth/signin", sendData)
         .then(res=>{
+            console.log(res.data)
             return dispatch({type: types.SUCCESS_SIGN_IN_WITH_EMAIL, emailResponse: res.data})
         })
         .catch(error=>{

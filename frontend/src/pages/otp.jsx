@@ -47,12 +47,14 @@ export function Otp()
 
     // return statement- 
     return (
-        <div id="mobile-number">
-            <p id="mobile-number-heading">Enter OTP sent to {sessionStorage.getItem("phone") || "number"}</p>
+        <div id="mobile-number-r">
+            <p id="mobile-number-r-heading">Enter OTP sent to {sessionStorage.getItem("phone") || "number"}</p>
             <input id="otp-input" maxlength="6" size="6" type="tel" placeholder="OTP" value={verifyOtp} onChange={(e)=>setVerifyOtp(e.target.value)} />
-            <input type="submit" value={"Submit"} id="mobile-number-btn" onClick={verifyOtpHandler} />
-            <p id="or">or</p>
-            <Link to={"/signin"}>Sign In with email address </Link>
+            <input type="submit" value={"Submit"} id="mobile-number-r-btn" onClick={verifyOtpHandler} />
+            <div id="mobile-number-r-bottom">
+                <p id="or">or</p>
+                <Link to={"/signin"}>Sign In with email address </Link>
+            </div>
         </div>
     );
 }

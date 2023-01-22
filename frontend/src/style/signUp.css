@@ -1,21 +1,21 @@
-body{
-    background-color: #f433971a;
-}
-#sign-up{
+#sign-up-r{
     border: 1px solid white;
     margin: auto;
-    margin-top: 2rem;
-    padding: 1rem 0;
+    margin-top: 12rem;
+    padding: 2rem 0;
     width: 500px;
     background-color: white;
     border-radius: 10px;
+    background-color: #f433971a;
 }
-#heading{
-    font-size: 24px;
+#heading-r{
+    text-align: center;
+    font-size: 3vh;
+    font-weight: bold;
     margin-bottom: 2rem;
     color: #F43397;
 }
-input{
+#sign-up-r>input{
     display: block;
     width: 90%;
     margin: 1rem auto;
@@ -24,31 +24,32 @@ input{
     border-bottom: 1px solid rgba(128, 128, 128, 0.502);
     font-size: 16px;
 }
-input:focus{
+#sign-up-r>input:focus{
     transition: .1s;
     outline: none;
     border-bottom: 1px solid #F43397;
 }
-input::placeholder{
+#sign-up-r>input::placeholder{
     font-size: 16px;
 }
-#sign-up-btn{
-    margin-top: 2.5rem;
+#sign-up-r-btn{
     padding: 0.8rem 0.2rem;
     background-color: #F43397;
     color: white;
-    font-size: 20px;
     letter-spacing: 1px;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.2s linear;
     border: none;
 }
-#sign-up-btn:hover{
+#sign-up-r-btn:hover{
     background-color: #f0027d;
 }
+#sign-up-r-bottom{
+    text-align: center;
+}
 #already-account{
-    margin-top: 2rem;
+    margin: 1rem 0;
 }
 #sign-in-options{
     color: #F43397;
@@ -61,7 +62,7 @@ input::placeholder{
 
 
 @media screen and (max-width: 520px) {
-    #sign-up{
+    #sign-up-r{
         width: 95%;
     }
 }

@@ -122,6 +122,7 @@ const signIn = (req, res) => {
     return;
   }
 
+
   // Check, if user is registered or not-
   RegisterModel.findOne({ email })
     .then((userData) => {
@@ -141,6 +142,7 @@ const signIn = (req, res) => {
           user === true
             ? res.json({ token, message: "Successfully loged in" })
             : res.status(404).json({ error: "Password is not matching" });
+
         })
         .catch((error) => {
           console.log(`error: ${error}`);

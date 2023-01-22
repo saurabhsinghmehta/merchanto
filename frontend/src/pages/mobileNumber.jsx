@@ -50,12 +50,14 @@ export function MobileNumber()
 
     // return statement-
     return (
-        <div id="mobile-number">
-            <p id="mobile-number-heading">Sign in to view your profile</p>
-            <input id="mobile-number-input" maxLength={"10"} type="tel" placeholder="Phone Number" value={phone} onChange={(e)=>setPhone(e.target.value)} />
-            <input type="submit" value={isLoading === true ? "...wait" : "Sign up"} id="mobile-number-btn" onClick={clickHandler} />
-            <p id="or">or</p>
-            <Link to={"/signin-email"}>Sign In with email address </Link>
+        <div id="mobile-number-r">
+            <p id="mobile-number-r-heading">Sign in to view your profile</p>
+            <input id="mobile-number-r-input" maxLength={"10"} type="tel" placeholder="Phone Number" value={phone} onChange={(e)=>setPhone(e.target.value)} />
+            <input type="submit" value={isLoading === true ? "...wait" : "Sign up"} id="mobile-number-r-btn" onClick={clickHandler} />
+            <div id="mobile-number-r-bottom">
+                <p id="or">or</p>
+                <Link to={"/signin-email"}>Sign In with email address </Link>
+            </div>
         </div>
     );
 }
