@@ -140,7 +140,7 @@ const signIn = (req, res) => {
         .compare(password, userData.password)
         .then((user) => {
           user === true
-            ? res.json({ token, message: "Successfully loged in" })
+            ? res.json({ token, message: "Successfully loged in", user: userData.name })
             : res.status(404).json({ error: "Password is not matching" });
 
         })

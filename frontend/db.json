@@ -3478,12 +3478,59 @@
     }
   ],
   "cart": [
-    
+    {
+      "id": 66,
+      "image": "https://www.jiomart.com/images/product/330x410/rvxp8nim0z/indiwest-textiles-women-s-cotton-solid-straight-yellow-kurti-product-images-rvxp8nim0z-0-202206030319.jpg",
+      "title": "Indiwest Textiles Women's Cotton Solid Straight Yellow Kurti",
+      "mrp": 1299,
+      "rating": 2,
+      "price": 349,
+      "category": "Handrares",
+      "discount": 73
+    }
   ],
   "checkout": [
-   
+    {
+      "id": 101,
+      "image": "https://images.meesho.com/images/products/41607236/zrc0m_512.jpg",
+      "mrp": 332,
+      "price": 232,
+      "category": "BreadWhite",
+      "rating": 3.7,
+      "review": 4,
+      "title": "Fancy Ravishing Men Shirts"
+    },
+    {
+      "id": 66,
+      "image": "https://www.jiomart.com/images/product/330x410/rvxp8nim0z/indiwest-textiles-women-s-cotton-solid-straight-yellow-kurti-product-images-rvxp8nim0z-0-202206030319.jpg",
+      "title": "Indiwest Textiles Women's Cotton Solid Straight Yellow Kurti",
+      "mrp": 1299,
+      "rating": 2,
+      "price": 349,
+      "category": "Handrares",
+      "discount": 73
+    }
   ],
   "payment": [
-   
+    {
+      "id": 101,
+      "image": "https://images.meesho.com/images/products/41607236/zrc0m_512.jpg",
+      "mrp": 332,
+      "price": 232,
+      "category": "BreadWhite",
+      "rating": 3.7,
+      "review": 4,
+      "title": "Fancy Ravishing Men Shirts"
+    },
+    {
+      "id": 66,
+      "image": "https://www.jiomart.com/images/product/330x410/rvxp8nim0z/indiwest-textiles-women-s-cotton-solid-straight-yellow-kurti-product-images-rvxp8nim0z-0-202206030319.jpg",
+      "title": "Indiwest Textiles Women's Cotton Solid Straight Yellow Kurti",
+      "mrp": 1299,
+      "rating": 2,
+      "price": 349,
+      "category": "Handrares",
+      "discount": 73
+    }
   ]
 }

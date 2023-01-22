@@ -24,7 +24,7 @@ const otpVerification = (req, res)=> {
         const {_id} = result;
         const token = jwt.sign({_id}, process.env.jwt_key, {expiresIn: "300s"})
         const randomOtp = Math.floor(100000 + Math.random() * 900000);
-        res.json({OTP: `${randomOtp}`, token})
+        res.json({OTP: `${randomOtp}`, token, user: result.name})
        }
     })
     .catch(error=>{

@@ -18,8 +18,8 @@ function Navbar() {
   const [cartData,setCartData]=useState([]);
 
   useEffect(()=>{
-    axios.get('http://localhost:8080/cart').then((res)=>setCartData(res.data))
-    axios.get('http://localhost:8080/menproduct').then((res)=>setData(res.data))
+    axios.get('https://meesho-clone-tau.vercel.app/cart').then((res)=>setCartData(res.data))
+    axios.get('https://meesho-clone-tau.vercel.app/menproduct').then((res)=>setData(res.data))
   },[])
 
   let lengthofcart=cartData.length;
@@ -111,7 +111,7 @@ function Navbar() {
         <div className="nav-menu">
           <ul>
           
-            <li className="dropdowns" >Women Western
+            <li className="dropdowns" ><Link to="/women">Women Western</Link>
               <div className="submenu">
                 <div className="subCat">
                   <span className="catHeading">Topwear</span>

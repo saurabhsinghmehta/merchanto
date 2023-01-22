@@ -6,6 +6,8 @@ import { useSelector,useDispatch } from 'react-redux';
 import { getProductData } from '../redux/app/action';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import Footerabout from '../components/footerabout';
+import Footer from '../components/footer';
 const disImg="https://i.postimg.cc/Kzk9hV5x/discount-3.png";
 const Home = () => {
   const [page,setPage]=useState(1)
@@ -814,6 +816,8 @@ useEffect(()=>{
         <Button ml="5%" color="rgb(244,51,151)" disabled={page==10}  onClick={()=>setPage(page+1)}>Next</Button>
       </Box>
     {/* --------------------------------------- */}
+      <Footerabout/>
+      <Footer/>
     </>
   )
 }

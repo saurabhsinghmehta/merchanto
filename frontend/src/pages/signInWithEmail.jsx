@@ -6,6 +6,7 @@ import { signInWithEmail } from "../redux/auth/action";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "../style/signIn.css";
+import Navbar from "../components/Navbar";
 
 export function SignInWithEmail()
 {
@@ -42,7 +43,7 @@ export function SignInWithEmail()
         else if(emailResponse.message)
         {
             localStorage.setItem("token", (emailResponse.token));
-            localStorage.setItem("name", (emailResponse.user));
+            localStorage.setItem("name", (emailResponse.name));
             notifySuccess(emailResponse.message);
             navigate("/");
         }
@@ -52,6 +53,7 @@ export function SignInWithEmail()
     // return statement-
     return (
         <>
+        <Navbar/>
             <div id="sign-in-r">
                 <p id="heading-r">Sign In to view your profile</p>
                 <input type="email" placeholder="Email Address" value={email} onChange={(e)=>setEmail(e.target.value)} />

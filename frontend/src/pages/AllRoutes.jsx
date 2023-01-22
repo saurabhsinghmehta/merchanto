@@ -16,6 +16,7 @@ import AdminDashboard from "../pages/AdminDashboard";
 import {SignInWithEmail} from "../pages/signInWithEmail"
 import Women from "./men";
 import SinglePage from "./singlemen";
+import { ToastContainer } from "react-toastify";
 const AllRoutes = () => {
   return (
     <>
@@ -36,6 +37,7 @@ const AllRoutes = () => {
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/otp" element={<Otp />} />
       </Routes>
+      <ToastContainer theme="colored"/>
     </>
   );
 };

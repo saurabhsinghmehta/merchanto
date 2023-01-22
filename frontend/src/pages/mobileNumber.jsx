@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { signInWithMobileNumber } from "../redux/auth/action";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Navbar from "../components/Navbar";
 
 export function MobileNumber()
 {
@@ -43,6 +44,7 @@ export function MobileNumber()
             sessionStorage.setItem("otp", (otpResponse.OTP))
             sessionStorage.setItem("phone", (phone))
             localStorage.setItem("token", (otpResponse.token))
+            localStorage.setItem("name", (otpResponse.name));
             navigate("/otp")
         }
         }, [otpResponse])
@@ -50,14 +52,17 @@ export function MobileNumber()
 
     // return statement-
     return (
-        <div id="mobile-number-r">
-            <p id="mobile-number-r-heading">Sign in to view your profile</p>
-            <input id="mobile-number-r-input" maxLength={"10"} type="tel" placeholder="Phone Number" value={phone} onChange={(e)=>setPhone(e.target.value)} />
-            <input type="submit" value={isLoading === true ? "...wait" : "Sign up"} id="mobile-number-r-btn" onClick={clickHandler} />
-            <div id="mobile-number-r-bottom">
-                <p id="or">or</p>
-                <Link to={"/signin-email"}>Sign In with email address </Link>
+        <>
+            <Navbar/>
+            <div id="mobile-number-r">
+                <p id="mobile-number-r-heading">Sign in to view your profile</p>
+                <input id="mobile-number-r-input" maxLength={"10"} type="tel" placeholder="Phone Number" value={phone} onChange={(e)=>setPhone(e.target.value)} />
+                <input type="submit" value={isLoading === true ? "...wait" : "Send OTP"} id="mobile-number-r-btn" onClick={clickHandler} />
+                <div id="mobile-number-r-bottom">
+                    <p id="or">or</p>
+                    <Link to={"/signin-email"}>Sign In with email address </Link>
+                </div>
             </div>
-        </div>
+        </>
     );
 }

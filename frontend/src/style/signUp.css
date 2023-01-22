@@ -64,5 +64,6 @@
 @media screen and (max-width: 520px) {
     #sign-up-r{
         width: 95%;
+        margin-top: 8rem;
     }
 }

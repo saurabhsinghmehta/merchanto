@@ -3,6 +3,7 @@
     grid-template-columns: repeat(4,0.5fr);
 }
 .menpage{
+    margin-top: 10%;
     display: flex;
 }
 @media screen and (max-width: 1000px){

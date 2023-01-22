@@ -1,7 +1,7 @@
 #sign-in-r{
     border: 1px solid white;
     margin: auto;
-    margin-top: 2rem;
+    margin-top: 12rem;
     padding: 2rem 0;
     width: 500px;
     background-color: white;
@@ -62,5 +62,6 @@
 @media screen and (max-width: 520px) {
     #sign-in-r{
         width: 95%;
+        margin-top: 8rem;
     }
 }

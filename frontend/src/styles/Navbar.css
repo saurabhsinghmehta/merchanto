@@ -38,7 +38,7 @@ width: 100%;
 }
 
 .logo{
-    width:43%;
+    width:35rem;
     border:0px solid blue;
     height: 100%;
     display: flex;
@@ -340,6 +340,9 @@ li:hover {
     }
    } 
    @media only screen and (min-width:481px) and (max-width:915px){
+    .logo{
+      width: 100rem;
+       }
     .dropbtn_supp{
         display: none;
        }
@@ -401,8 +404,3 @@ li:hover {
         display: none;
       }
    }
-   @media only screen and (min-width:890px) and (max-width:1580px){
-    
-   }
-   
-   

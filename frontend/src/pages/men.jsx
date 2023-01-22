@@ -10,6 +10,7 @@ import { useState } from "react";
 import { AiOutlineCaretLeft } from 'react-icons/ai'
 import { AiFillCaretRight } from 'react-icons/ai'
 import MenCard from "../components/Mencard";
+import Navbar from "../components/Navbar";
 
 
 const Women = () => {
@@ -33,6 +34,7 @@ const Women = () => {
   console.log(mens)
     return (
         <> 
+        <Navbar/>
             <div>
                 <h1>men page</h1>
                 

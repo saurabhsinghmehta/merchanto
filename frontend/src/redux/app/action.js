@@ -138,7 +138,7 @@ export const deleteCartDataError=()=>{
 
 export const getCartData=()=>(dispatch)=>{
     dispatch(getCartDataRequest());
-    return axios.get('http://localhost:8080/cart')
+    return axios.get('https://meesho-clone-tau.vercel.app//cart')
     .then((res)=>dispatch(getCartDataSuccess(res.data)))
     .catch((error)=>{
         dispatch(getCartDataError(error))
@@ -148,7 +148,7 @@ export const getCartData=()=>(dispatch)=>{
 export const addCartData=(payload)=>(dispatch)=>{
     dispatch(addCartDataRequest())
     return axios
-    .post('http://localhost:8080/cart',payload)
+    .post('https://meesho-clone-tau.vercel.app/cart',payload)
     .then((res)=>{
         dispatch(addCartDataSuccess(res.data))
     })
@@ -159,7 +159,7 @@ export const addCartData=(payload)=>(dispatch)=>{
 export const deleteCartData=(id)=>(dispatch)=>{
     dispatch(deleteCartDataRequest());
     axios
-    .delete(`http://localhost:8080/cart/${id}`)
+    .delete(`https://meesho-clone-tau.vercel.app/cart/${id}`)
     .then((res)=>{
      dispatch(deleteCartDataSuccess())
     })
@@ -184,7 +184,7 @@ export const getProductData=(params)=>(dispatch)=>{
 }
 export const getMenProductData=(params)=>(dispatch)=>{
     dispatch(getDataRequest());
-    axios.get('http://localhost:8080/menproduct',params)
+    axios.get('https://meesho-clone-tau.vercel.app/menproduct',params)
     .then((res)=>{
         console.log("data",res)
         dispatch(getDataSuccess(res.data))
@@ -198,7 +198,7 @@ export const getMenProductData=(params)=>(dispatch)=>{
 
 export const getCheckoutData=()=>(dispatch)=>{
     dispatch(getCheckoutDataRequest());
-    return axios.get('http://localhost:8080/checkout')
+    return axios.get('https://meesho-clone-tau.vercel.app/checkout')
     .then((res)=>dispatch(getCheckoutDataSuccess(res.data)))
     .catch((error)=>{
         dispatch(getCheckoutDataError(error))
@@ -208,7 +208,7 @@ export const getCheckoutData=()=>(dispatch)=>{
 export const addCheckoutData=(payload)=>(dispatch)=>{
     dispatch(addCheckoutDataRequest())
     return axios
-    .post('http://localhost:8080/checkout',payload)
+    .post('https://meesho-clone-tau.vercel.app/checkout',payload)
     .then((res)=>{
         dispatch(addCheckoutDataSuccess(res.data))
     })
@@ -222,7 +222,7 @@ export const addCheckoutData=(payload)=>(dispatch)=>{
 export const addPaymentData=(payload)=>(dispatch)=>{
     dispatch(addPaymentDataRequest())
     return axios
-    .post('http://localhost:8080/payment',payload)
+    .post('https://meesho-clone-tau.vercel.app/payment',payload)
     .then((res)=>{
         dispatch(addPaymentDataSuccess(res.data))
     })
@@ -234,7 +234,7 @@ export const addPaymentData=(payload)=>(dispatch)=>{
 export const getPaymentData=()=>(dispatch)=>{
     dispatch(getPaymentDataRequest());
     return axios
-    .get('http://localhost:8080/payment')
+    .get('https://meesho-clone-tau.vercel.app/payment')
     .then((res)=>dispatch(getPaymentDataSuccess(res.data)))
     .catch((error)=>{
         dispatch(getPaymentDataError(error))
