@@ -6,6 +6,8 @@ import {useEffect,useState} from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { addCartData, getProductData } from '../redux/app/action';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const disImg="https://i.postimg.cc/Kzk9hV5x/discount-3.png";
 const HomedataSinglePage = () => {
     const{id}=useParams();
@@ -26,9 +28,13 @@ const HomedataSinglePage = () => {
         product&&setCurrentProduct(product)
     }
    })
+   const notifySuccess = (res)=>{toast.success(res)};
+    
+
    const handleCart=(payload)=>{
     dispatch(addCartData(payload))
-    alert("Item added in Cart")
+    notifySuccess("Item added in Cart")
+    // alert("Item added in Cart")
     console.log(payload);
    }
   
@@ -39,8 +45,8 @@ const HomedataSinglePage = () => {
        <Box w="50%" border="px solid red">
         <Image border="px solid red" display="block" m="auto" src={currentProduct.image}/>
         <Box  display={["grid","","","flex"]} gap={["10px","","",""]} w="70%" m="auto" mt="20%" border="px solid red">
-       <Button onClick={()=>handleCart(currentProduct)} w={["82%","","","95%"]} fontSize={["20px","","","20px"]} border="1px solid black" _hover={{bgColor:'white'}} bgColor="white" >{`🛒`}Add To Cart</Button> 
-        <Button  w={["82%","","","50%"]} fontSize={["20px","","","20px"]}  bgColor="rgb(244,51,151)" color="white" _hover={{bgColor:'rgb(244,51,151)'}}>{`>>`}Buy Now</Button>
+       <Button onClick={()=>handleCart(currentProduct)} w={["100%","","","95%"]} fontSize={["13px","","","20px"]} border="1px solid black" _hover={{bgColor:'white'}} bgColor="white" >{`🛒`}Add To Cart</Button> 
+        <Button  w={["86%","","","50%"]} fontSize={["13px","","","20px"]}  bgColor="rgb(244,51,151)" color="white" _hover={{bgColor:'rgb(244,51,151)'}}>{`>>`}Buy Now</Button>
         </Box>
         <Box  display={["flex","","","flex"]} gap="10px" justifyContent="center">
         <Image  w={["25%","","","10%"]} m="right" mt="5%" src={currentProduct.image}/>

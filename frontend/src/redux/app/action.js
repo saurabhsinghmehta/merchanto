@@ -36,6 +36,39 @@ export const addCartDataError=()=>{
     }
 }
 
+export const addCheckoutDataRequest=()=>{
+    return {
+        type:types.ADD_CHECKOUT_DATA_REQUEST
+    }
+}
+export const addCheckoutDataSuccess=(payload)=>{
+    return {
+        type:types.ADD_CHECKOUT_DATA_SUCCESS,payload
+
+    }
+}
+export const addCheckoutDataError=()=>{
+    return {
+        type:types.ADD_CHECKOUT_DATA_ERROR
+    }
+}
+export const addPaymentDataRequest=()=>{
+    return {
+        type:types.ADD_PAYMENT_DATA_REQUEST
+    }
+}
+export const addPaymentDataSuccess=(payload)=>{
+    return {
+        type:types.ADD_PAYMENT_DATA_SUCCESS,payload
+
+    }
+}
+export const addPaymentDataError=()=>{
+    return {
+        type:types.ADD_PAYMENT_DATA_ERROR
+    }
+}
+
 export const getCartDataRequest=()=>{
     return {
         type:types.GET_CART_DATA_REQUEST
@@ -49,7 +82,40 @@ export const getCartDataSuccess=(payload)=>{
 }
 export const getCartDataError=()=>{
     return {
-        type:types.GET_CART_DATA_ERROR
+        type:types.GET_CHECKOUT_DATA_ERROR
+    }
+}
+export const getCheckoutDataRequest=()=>{
+    return {
+        type:types.GET_CHECKOUT_DATA_REQUEST
+    }
+}
+export const getCheckoutDataSuccess=(payload)=>{
+    return {
+        type:types.GET_CHECKOUT_DATA_SUCCESS,payload
+
+    }
+}
+export const getCheckoutDataError=()=>{
+    return {
+        type:types.GET_CHECKOUT_DATA_ERROR
+    }
+}
+export const getPaymentDataRequest=()=>{
+    return {
+        type:types.GET_PAYMENT_DATA_REQUEST
+    }
+}
+export const getPaymentDataSuccess=(payload)=>{
+    return {
+        type:types.GET_PAYMENT_DATA_SUCCESS,
+        payload
+
+    }
+}
+export const getPaymentDataError=()=>{
+    return {
+        type:types.GET_PAYMENT_DATA_ERROR
     }
 }
 const deleteCartDataRequest=()=>{
@@ -130,3 +196,47 @@ export const getMenProductData=(params)=>(dispatch)=>{
 }
 
 
+export const getCheckoutData=()=>(dispatch)=>{
+    dispatch(getCheckoutDataRequest());
+    return axios.get('http://localhost:8080/checkout')
+    .then((res)=>dispatch(getCheckoutDataSuccess(res.data)))
+    .catch((error)=>{
+        dispatch(getCheckoutDataError(error))
+    }) 
+}
+
+export const addCheckoutData=(payload)=>(dispatch)=>{
+    dispatch(addCheckoutDataRequest())
+    return axios
+    .post('http://localhost:8080/checkout',payload)
+    .then((res)=>{
+        dispatch(addCheckoutDataSuccess(res.data))
+    })
+    .catch((e)=>{
+        dispatch(addCheckoutDataError(e))
+    })
+}
+
+
+
+export const addPaymentData=(payload)=>(dispatch)=>{
+    dispatch(addPaymentDataRequest())
+    return axios
+    .post('http://localhost:8080/payment',payload)
+    .then((res)=>{
+        dispatch(addPaymentDataSuccess(res.data))
+    })
+    .catch((e)=>{
+        dispatch(addPaymentDataError(e))
+    })
+}
+
+export const getPaymentData=()=>(dispatch)=>{
+    dispatch(getPaymentDataRequest());
+    return axios
+    .get('http://localhost:8080/payment')
+    .then((res)=>dispatch(getPaymentDataSuccess(res.data)))
+    .catch((error)=>{
+        dispatch(getPaymentDataError(error))
+    }) 
+}
