@@ -1,3 +1,4 @@
+
 require("dotenv").config();
 
 const AppModel = require("../model/app_model");
@@ -22,7 +23,5 @@ res.status(200).json(home_prod)
       res.status(500).json({error:true,message:"Internal Server Error"})
 }
 }
-
-
-module.exports = { home };
+module.exports = {home};
 
