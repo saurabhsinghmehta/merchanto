@@ -1,6 +1,6 @@
 import "./men.Module.css"
 import React ,{useEffect} from "react";
-import Filter from "../Component/filter";
+import Filter from "../components/filter";
 import { getmen } from "../redux/Men/action";
 import { useDispatch } from "react-redux/es/exports";
 import { useSelector } from "react-redux/es/hooks/useSelector";
@@ -9,10 +9,10 @@ import {useLocation} from "react-router-dom"
 import { useState } from "react";
 import { AiOutlineCaretLeft } from 'react-icons/ai'
 import { AiFillCaretRight } from 'react-icons/ai'
-import MenCard from "../Component/Mencard";
+import MenCard from "../components/Mencard";
 
 
-const Mens = () => {
+const Women = () => {
     const [page,setpage] = useState(1)
   const mens = useSelector((store) => store.MenReducer.mens)
   const dispatch = useDispatch()
@@ -35,11 +35,7 @@ const Mens = () => {
         <> 
             <div>
                 <h1>men page</h1>
-                <div className="pagination">
-                <button className="backbtn" disabled={page==1} onClick={()=>setpage(page-1)}><AiOutlineCaretLeft/> </button>
-                <button className="backbtn">{page}</button>
-                <button className="backbtn" disabled={page==7} onClick={()=>setpage(page+1)}><AiFillCaretRight/></button>
-                </div>
+                
                 </div>
     <div className="menpage">
           <div className="menfilter">
@@ -53,10 +49,16 @@ const Mens = () => {
         
         </div>
        
-            </div>
+        </div>
+        
+        <div className="pagination">
+                <button className="backbtn" disabled={page==1} onClick={()=>setpage(page-1)}><AiOutlineCaretLeft/> </button>
+                <button className="backbtn">{page}</button>
+                <button className="backbtn" disabled={page==7} onClick={()=>setpage(page+1)}><AiFillCaretRight/></button>
+                </div>
             </>
   );
 };
 
 
-export default Mens;
+export default Women;

@@ -11,12 +11,12 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import DisplayProducts from "../Components/DisplayProducts";
-import Sorting from "../Components/Sorting";
+import DisplayProducts from "../components/DisplayProducts";
+import Sorting from "../components/Sorting";
 import "../styles/admin.css";
 import { getData } from "../redux/Sorting/actiontype";
 import { useState, useEffect } from "react";
-import ProductManagement from "../Components/ProductManagement";
+import ProductManagement from "../components/ProductManagement";
 import { UserAuth } from "./Context/UserAuthContext";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";

@@ -11,6 +11,8 @@ import Checkout from "./Checkout";
 import { MobileNumber } from "./mobileNumber";
 import AdminDashboard from "../pages/AdminDashboard";
 import {SignInWithEmail} from "../pages/signInWithEmail"
+import Women from "./men";
+import SinglePage from "./singlemen";
 const AllRoutes = () => {
   return (
     <>
@@ -19,6 +21,8 @@ const AllRoutes = () => {
         <Route path="/product/:id" element={<HomedataSinglePage />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/mens" element={<MenPage />} />
+        <Route path="/women" element={<Women />} />
+        <Route path="/women/:id" element={<SinglePage />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/signup" element={<SignUp />} />

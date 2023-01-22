@@ -1,6 +1,6 @@
 import React from 'react'
 import {Box,Button,Text,Image, Heading} from '@chakra-ui/react'
-import Navbar from '../Components/Navbar'
+import Navbar from '../components/Navbar'
 import { useSelector } from "react-redux";
 import {useEffect,useState} from "react";
 import { useDispatch } from "react-redux";

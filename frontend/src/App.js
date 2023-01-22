@@ -2,8 +2,8 @@ import './App.css';
 
 
 import AllRoutes from './pages/AllRoutes';
-import Footer from './Components/footer';
-import Footerabout from './Components/footerabout';
+import Footer from "./components/footer"
+import Footerabout from "./components/footerabout"
 
 function App() {
   return (
