@@ -1,5 +1,4 @@
-<h1>Merchanto<h1>
-<img width="50px" src="https://user-images.githubusercontent.com/107741808/208722329-c9ecf1f9-f606-4692-aa42-9701cd12838d.jpeg"/>  
+<h1>Merchanto<h1>  
 
 
 <h1>Description</h1>
