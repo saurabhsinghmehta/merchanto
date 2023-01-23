@@ -41,5 +41,5 @@
 
 
 <h1>Go Live</h1>
-https://merchanto.app/
+https://merchanto.netlify.app/
 
