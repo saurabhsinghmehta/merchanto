@@ -40,4 +40,3 @@
 
 <h1>Go Live</h1>
 https://merchanto.netlify.app/
-
